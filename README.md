@@ -2,6 +2,9 @@
 
 **Interactive Digital Learning Design Inspiration Library**
 
+🌐 **線上瀏覽**：https://prayer168.github.io/digital-learning-inspiration-site/
+📦 **原始碼**：https://github.com/prayer168/digital-learning-inspiration-site
+
 一套提供教師、教材設計者、教育科技工作者與學生使用的數位教材設計案例資料庫。收錄 JavaScript 特效、CSS 動畫、自然科互動網站案例，以及 Three.js、GSAP、SVG、Canvas 教材效果，並針對每個案例提供**教學應用、技術分析與修改建議**，可直接複製程式碼、即時預覽並套用到自己的教材。
 
 以純 HTML / CSS / 原生 JavaScript 開發，**不需後端、不需登入、不連資料庫**，可直接部署到 GitHub Pages，也可在本機直接開啟 `index.html` 使用。
@@ -94,37 +97,26 @@ npx serve
 
 ## 四、GitHub Pages 部署流程
 
-1. 建立 GitHub 儲存庫，將本資料夾內容推送上去（讓 `index.html` 位於您要發布的路徑）。
-2. 進入儲存庫 **Settings → Pages**。
-3. **Source** 選擇 `Deploy from a branch`，Branch 選擇您的分支（如 `main`）與 `/ (root)`（或放置 `index.html` 的資料夾）。
-4. 儲存後稍候，即可在 `https://<帳號>.github.io/<儲存庫>/` 瀏覽。
+本 repo 已將網站放在**根目錄**（`index.html` 位於最外層，並含 `.nojekyll`），因此部署非常簡單：
+
+1. 進入 **Settings → Pages**（https://github.com/prayer168/digital-learning-inspiration-site/settings/pages）。
+2. **Source** 選 `Deploy from a branch`。
+3. **Branch** 選 `main` 與 `/ (root)`，按 **Save**。
+4. 稍候約 1 分鐘，即可於 **https://prayer168.github.io/digital-learning-inspiration-site/** 瀏覽。
 
 > **子路徑相容**：所有資源皆使用**相對路徑**（例如 `css/style.css`、`assets/thumbnails/xxx.png`），不使用 `/assets/...` 這類會在專案子路徑失效的絕對路徑，因此在 GitHub Pages 子路徑下也能正常載入。
 
-### 方式二：以 `gh-pages` 分支部署（本網站位於既有 repo 的子資料夾時）
+### 日後更新網站
 
-若本專案是放在既有 repo 的子資料夾（例如 `digital-learning-inspiration/`），可用 `git subtree split` 把該子資料夾抽出成一個「根目錄即網站」的 `gh-pages` 分支，再由 GitHub Pages 從該分支發布。此分支完全獨立，**不影響 `main`**。
-
-首次部署：
+改完檔案後，於本 repo 根目錄提交並推送 `main` 即可自動重新發布：
 
 ```bash
-# 於 repo 根目錄、且目前分支含有該子資料夾時執行
-git subtree split --prefix=digital-learning-inspiration -b gh-pages
-git push -u origin gh-pages
+git add -A
+git commit -m "Update site"
+git push origin main
 ```
 
-接著到 **Settings → Pages** → Source 選 `Deploy from a branch` → Branch 選 `gh-pages` + `/ (root)` → Save。稍候即可於 `https://<帳號>.github.io/<儲存庫>/` 瀏覽（例如 `https://prayer168.github.io/docx/`）。
-
-日後更新（改完子資料夾內容並提交後，重新抽出並強制更新 `gh-pages`）：
-
-```bash
-git checkout <你更新後的分支>
-git branch -D gh-pages
-git subtree split --prefix=digital-learning-inspiration -b gh-pages
-git push -f origin gh-pages
-```
-
-> 若專案本身就是 repo 根目錄（`index.html` 在最外層），則不需 `gh-pages` 技巧，直接依方式一從 `main` 的 `/ (root)` 發布即可；也可使用 `scripts/deploy-to-github.sh` 推送到一個全新的獨立 repo。
+> 若你想改用獨立部署腳本，`scripts/deploy-to-github.sh` 亦可將本資料夾推送到任一 GitHub 儲存庫。
 
 ---
 
