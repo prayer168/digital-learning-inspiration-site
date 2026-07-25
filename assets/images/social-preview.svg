@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">數位教材設計靈感大全</title>
+  <desc id="desc">深海藍色知識航行圖，呈現五百多個可搜尋、可預覽的互動教材案例。</desc>
+  <defs>
+    <radialGradient id="ocean-glow" cx="76%" cy="43%" r="64%">
+      <stop offset="0" stop-color="#0b6170" stop-opacity=".84"/>
+      <stop offset=".48" stop-color="#123c56" stop-opacity=".34"/>
+      <stop offset="1" stop-color="#06131d" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="route" x1="0" x2="1" y1="0" y2="1">
+      <stop stop-color="#5eead4"/>
+      <stop offset="1" stop-color="#dfb96b"/>
+    </linearGradient>
+    <filter id="blur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="28"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="630" fill="#06131d"/>
+  <rect width="1200" height="630" fill="url(#ocean-glow)"/>
+  <path d="M0 92H1200M0 315H1200M0 538H1200M120 0V630M600 0V630M1080 0V630"
+        fill="none" stroke="#d6e6e4" stroke-opacity=".055"/>
+  <circle cx="960" cy="116" r="130" fill="#21c7b7" opacity=".12" filter="url(#blur)"/>
+
+  <g transform="translate(850 315)" fill="none">
+    <circle r="212" stroke="#d6e6e4" stroke-opacity=".16"/>
+    <circle r="158" stroke="#5eead4" stroke-opacity=".32"/>
+    <circle r="101" stroke="#d6e6e4" stroke-opacity=".18"/>
+    <circle r="45" fill="#0b2733" stroke="#dfb96b" stroke-width="2"/>
+    <path d="M-238 0H238M0-238V238" stroke="#d6e6e4" stroke-opacity=".15"/>
+    <path d="M-174 128C-105 74-87-70 3-92S138-20 177-137" stroke="url(#route)" stroke-width="4"/>
+    <circle cx="-174" cy="128" r="8" fill="#5eead4"/>
+    <circle cx="3" cy="-92" r="8" fill="#d6e6e4"/>
+    <circle cx="177" cy="-137" r="8" fill="#dfb96b"/>
+  </g>
+
+  <g font-family="'Noto Sans TC','Microsoft JhengHei',sans-serif">
+    <text x="72" y="86" fill="#5eead4" font-size="20" font-weight="700" letter-spacing="4">DIGITAL LEARNING FIELD GUIDE</text>
+    <text x="72" y="208" fill="#f5f1e8" font-size="66" font-weight="800">數位教材設計</text>
+    <text x="72" y="294" fill="#f5f1e8" font-size="66" font-weight="800">靈感大全</text>
+    <rect x="72" y="340" width="74" height="4" rx="2" fill="#dfb96b"/>
+    <text x="72" y="395" fill="#c7d7d7" font-size="27">搜尋、比較、即時預覽互動教材案例</text>
+    <g transform="translate(72 458)">
+      <rect width="126" height="54" rx="27" fill="#5eead4"/>
+      <text x="63" y="35" text-anchor="middle" fill="#06131d" font-size="20" font-weight="800">509 案例</text>
+      <rect x="142" width="146" height="54" rx="27" fill="none" stroke="#d6e6e4" stroke-opacity=".42"/>
+      <text x="215" y="35" text-anchor="middle" fill="#f5f1e8" font-size="20" font-weight="700">可即時預覽</text>
+      <rect x="304" width="126" height="54" rx="27" fill="none" stroke="#d6e6e4" stroke-opacity=".42"/>
+      <text x="367" y="35" text-anchor="middle" fill="#f5f1e8" font-size="20" font-weight="700">免費使用</text>
+    </g>
+    <text x="72" y="570" fill="#dfb96b" font-size="19" letter-spacing="2">PRAYER168.GITHUB.IO</text>
+    <text x="850" y="324" text-anchor="middle" fill="#f5f1e8" font-size="30" font-weight="800">509</text>
+    <text x="850" y="350" text-anchor="middle" fill="#9fbaba" font-size="12" letter-spacing="2">CASES</text>
+    <text x="1106" y="592" text-anchor="end" fill="#9fbaba" font-size="14" letter-spacing="2">EXPLORE · ADAPT · TEACH</text>
+  </g>
+</svg>

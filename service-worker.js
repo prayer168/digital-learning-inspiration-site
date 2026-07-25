@@ -5,13 +5,14 @@
 "use strict";
 
 var CACHE_PREFIX = "digital-learning-inspiration-";
-var CACHE_VERSION = "v2";
+var CACHE_VERSION = "v3";
 var APP_CACHE = CACHE_PREFIX + CACHE_VERSION;
 
 var APP_SHELL = [
   "./",
   "./index.html",
   "./README.md",
+  "./assets/images/social-preview.png",
   "./css/style.css",
   "./css/components.css",
   "./css/responsive.css",
