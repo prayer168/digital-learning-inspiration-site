@@ -36,6 +36,7 @@
 
 ```
 digital-learning-inspiration/
+├── .gitignore            # 忽略 Playwright／Node 開發產物
 ├── index.html            # 單頁式主頁面
 ├── css/
 │   ├── style.css         # 設計權杖、主題、版面、排版
@@ -68,8 +69,13 @@ digital-learning-inspiration/
 │   ├── icons/            # 圖示
 │   ├── images/           # 圖片
 │   └── thumbnails/       # 縮圖（缺圖時卡片自動以 emoji 備援）
+├── scripts/
+│   ├── audit-physics.js  # 物理公式、互動與 CDN 線上回歸稽核
+│   ├── generate-thumbnails.js
+│   └── deploy-to-github.sh
 ├── docs/
-│   └── test-report.md    # 功能、資料、離線與手機版品質檢核
+│   ├── test-report.md    # 功能、資料、離線與手機版品質檢核
+│   └── cdn-physics-online-checklist.md
 ├── README.md
 ├── service-worker.js     # 網站殼層、案例資料與精選縮圖離線快取
 └── LICENSE
@@ -221,5 +227,20 @@ node scripts/generate-thumbnails.js js-001 sci-001   # 只產生指定 id
 - ✅ 全部 JS 檔通過語法檢查、`data.js` 通過解析、無重複 id、核心欄位齊全
 - ✅ RWD 320～1440px 無整頁水平捲軸；Modal 手機版接近全螢幕
 - ✅ 所有介面文字為臺灣繁體中文
+
+### 重跑物理教材稽核
+
+稽核腳本會用 Chromium 實際操作教材。第一次執行前需安裝開發用 Playwright（網站瀏覽本身不需要 Node.js）：
+
+```bash
+npm install --save-dev playwright
+npx playwright install chromium
+node scripts/audit-physics.js                         # 24 組公式 + 20 個免 CDN 互動案例
+node scripts/audit-physics.js --write-report          # 並更新 AUDIT.md
+node scripts/audit-physics.js --online                # 再測正式網站 12 個 CDN 物理案例
+node scripts/audit-physics.js --online --write-report # 線上測試並更新報告
+```
+
+CDN 案例的人工操作、物理現象判讀與結果紀錄格式見 [`docs/cdn-physics-online-checklist.md`](docs/cdn-physics-online-checklist.md)。
 
 詳細待辦與擴充方式見上方「未來開發方向」與「如何新增案例」。

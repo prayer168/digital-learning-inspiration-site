@@ -23,3 +23,13 @@
 - Service Worker 僅在 HTTP(S) 環境啟用；`file://` 仍可使用原有核心功能，但沒有離線快取。
 - Prism.js 與 Three.js、GSAP、p5.js、Matter.js、Chart.js 等第三方 CDN 不納入本站快取；依賴這些程式庫的案例離線時仍無法執行。
 - 物理教材公式與互動的詳細驗證結果另見根目錄 `AUDIT.md`。
+
+## 物理教材回歸稽核
+
+- 稽核腳本：`scripts/audit-physics.js`
+- 公式數值驗算：✅ 24 / 24
+- 免 CDN 可操作性：✅ 20 / 20
+- 正式網站 CDN 煙霧測試：✅ 12 / 12
+- 人工線上驗證清單：`docs/cdn-physics-online-checklist.md`
+
+CDN 煙霧測試已從正式 GitHub Pages 讀取目前發布的案例程式碼，確認 p5.js、Matter.js 與 Three.js 的載入、Canvas/WebGL 渲染、動畫影格變化及基本互動。物理現象的方向、順序與教學合理性仍須依人工清單判讀。
