@@ -29,6 +29,7 @@
 - 🖼️ **卡片縮圖**：依資源類型上色的漸層縮圖，精選案例附真實截圖；詳情視窗頂部大圖橫幅
 - ♿ **無障礙**：語意標籤、鍵盤操作、焦點管理、`aria-*`、`prefers-reduced-motion`
 - 📱 **RWD**：320 / 375 / 768 / 1024 / 1440px 皆無整頁水平捲軸
+- 🌊 **沉浸式探索視覺**：以本站原創的「知識航行圖」、深海色票、章節編號與研究檔案卡片建立清楚的敘事層次
 
 ---
 
@@ -75,7 +76,8 @@ digital-learning-inspiration/
 │   └── deploy-to-github.sh
 ├── docs/
 │   ├── test-report.md    # 功能、資料、離線與手機版品質檢核
-│   └── cdn-physics-online-checklist.md
+│   ├── cdn-physics-online-checklist.md
+│   └── visual-design-notes.md
 ├── README.md
 ├── service-worker.js     # 網站殼層、案例資料與精選縮圖離線快取
 └── LICENSE
@@ -186,6 +188,7 @@ require('fs').writeFileSync('data/examples.json',JSON.stringify(window.DATA,null
 - 本站**示範程式碼**以教學與研究用途為主，歡迎自由取用、修改與再創作（見 `LICENSE`）。
 - 引用第三方網站（如 PhET、NASA）時，本站**僅提供連結、功能分析與教學應用建議，不複製其原始程式碼、不宣稱擁有其內容**；所有商標、網站內容與原始設計均屬其原權利人所有。
 - 對於無法確定的第三方技術，資料中標示「依網站互動表現推測，未經官方確認。」
+- 2026 年視覺改版只借鑑沉浸式敘事網站的通用設計原則，未使用參考網站的圖片、影音、品牌、文案或程式碼；詳細界線見 [`docs/visual-design-notes.md`](docs/visual-design-notes.md)。
 
 ---
 

@@ -84,15 +84,39 @@
         <span style="--x:92%;--d:-11s;--s:21s">💡</span>
       </div>
       <div class="hero__inner">
-        <p class="hero__eyebrow">Interactive Digital Learning Design Inspiration Library</p>
-        <h1 class="hero__title">數位教材設計靈感大全</h1>
-        <p class="hero__subtitle">
-          探索 JavaScript、CSS、Three.js、GSAP、SVG 與 Canvas，<br />
-          將程式特效轉化為真正有意義的互動教材。
-        </p>
-        <div class="hero__actions">
-          <a href="#library" class="btn btn--primary">開始探索案例</a>
-          <a href="#favorites" class="btn btn--ghost">查看我的收藏</a>
+        <div class="hero__copy">
+          <p class="hero__chapter">FIELD GUIDE · 01</p>
+          <p class="hero__eyebrow">Interactive Digital Learning Design Inspiration Library</p>
+          <h1 class="hero__title">
+            <span>數位教材</span>
+            <span>設計靈感大全</span>
+          </h1>
+          <p class="hero__subtitle">
+            沿著程式、科學與設計交會的知識流，探索可直接實作的互動教材案例，
+            讓每一段效果都成為有意義的學習經驗。
+          </p>
+          <div class="hero__actions">
+            <a href="#library" class="btn btn--primary">啟程探索案例</a>
+            <a href="#favorites" class="btn btn--ghost">查看我的收藏</a>
+          </div>
+          <p class="hero__note">免登入 · 可離線 · 程式碼可直接取用</p>
+        </div>
+
+        <div class="knowledge-map" aria-hidden="true">
+          <div class="knowledge-map__ring knowledge-map__ring--outer"></div>
+          <div class="knowledge-map__ring knowledge-map__ring--middle"></div>
+          <div class="knowledge-map__ring knowledge-map__ring--inner"></div>
+          <div class="knowledge-map__axis knowledge-map__axis--x"></div>
+          <div class="knowledge-map__axis knowledge-map__axis--y"></div>
+          <div class="knowledge-map__core">
+            <strong data-stat="total">0</strong>
+            <span>靈感案例</span>
+          </div>
+          <span class="knowledge-map__node knowledge-map__node--science">科學</span>
+          <span class="knowledge-map__node knowledge-map__node--design">設計</span>
+          <span class="knowledge-map__node knowledge-map__node--code">程式</span>
+          <span class="knowledge-map__node knowledge-map__node--interaction">互動</span>
+          <span class="knowledge-map__coordinate">25°03′ N · LEARNING CURRENT</span>
         </div>
 
         <!-- 統計資料（數字遞增動畫） -->
@@ -104,13 +128,19 @@
           <li class="stat"><span class="stat__num" data-stat="tech">0</span><span class="stat__label">技術分類</span></li>
           <li class="stat"><span class="stat__num" data-stat="subjects">0</span><span class="stat__label">教學領域</span></li>
         </ul>
+        <a class="hero__scroll" href="#explore-routes" aria-label="向下前往快速探索">
+          <span>SCROLL TO EXPLORE</span>
+          <i aria-hidden="true"></i>
+        </a>
       </div>
     </section>
 
     <!-- ===================== 首頁快捷入口 ===================== -->
-    <section class="quick-links" aria-label="首頁推薦分類快捷入口">
+    <section class="quick-links" id="explore-routes" aria-label="首頁推薦分類快捷入口">
       <div class="section__inner">
-        <h2 class="section__title">快速探索</h2>
+        <p class="section__kicker">02 / CHOOSE A ROUTE</p>
+        <h2 class="section__title">選一條知識航線</h2>
+        <p class="section__lead">從教學領域、裝置需求或技術難度切入，快速抵達合適案例。</p>
         <div class="quick-links__grid" id="quick-links">
           <!-- 由 app.js 動態產生快捷按鈕 -->
         </div>
@@ -120,7 +150,9 @@
     <!-- ===================== 搜尋 + 資料庫區 ===================== -->
     <section class="library" id="library">
       <div class="section__inner">
-        <h2 class="section__title">案例資料庫</h2>
+        <p class="section__kicker">03 / CASE ARCHIVE</p>
+        <h2 class="section__title">探索案例檔案</h2>
+        <p class="section__lead">搜尋技術、教學科目與互動形式，把靈感帶回自己的課堂。</p>
 
         <!-- 全站搜尋列 -->
         <div class="search" role="search">
@@ -188,6 +220,7 @@
     <!-- ===================== 教學分類區 ===================== -->
     <section class="category-block" id="subjects">
       <div class="section__inner">
+        <p class="section__kicker">04 / LEARNING DOMAINS</p>
         <h2 class="section__title">依教學領域瀏覽</h2>
         <p class="section__lead">點選領域，快速篩選相關案例。</p>
         <div class="chips" id="subject-chips"></div>
@@ -197,6 +230,7 @@
     <!-- ===================== 技術分類區 ===================== -->
     <section class="category-block" id="technologies">
       <div class="section__inner">
+        <p class="section__kicker">05 / CREATIVE TOOLS</p>
         <h2 class="section__title">依技術分類瀏覽</h2>
         <p class="section__lead">點選技術，快速篩選使用該技術的案例。</p>
         <div class="chips" id="tech-chips"></div>
@@ -206,6 +240,7 @@
     <!-- ===================== 收藏區 ===================== -->
     <section class="category-block" id="favorites">
       <div class="section__inner">
+        <p class="section__kicker">06 / SAVED FINDINGS</p>
         <div class="favorites__header">
           <h2 class="section__title">我的收藏 <span class="badge" id="fav-count">0</span></h2>
           <div class="favorites__actions">
@@ -225,6 +260,7 @@
     <!-- ===================== 使用指南區 ===================== -->
     <section class="category-block" id="guide">
       <div class="section__inner">
+        <p class="section__kicker">07 / FIELD NOTES</p>
         <h2 class="section__title">如何使用本站</h2>
         <div class="guide__grid" id="guide-grid">
           <!-- 由 app.js 動態產生 -->
@@ -235,6 +271,7 @@
     <!-- ===================== 關於本站區 ===================== -->
     <section class="category-block" id="about">
       <div class="section__inner">
+        <p class="section__kicker">08 / ABOUT THE ARCHIVE</p>
         <h2 class="section__title">關於本站</h2>
         <div class="about__content">
           <p>《數位教材設計靈感大全》是一套提供教師、教材設計者、教育科技工作者與學生使用的數位教材設計案例資料庫。我們相信程式特效不只是視覺展示，更能轉化為真正有意義的互動教材。</p>

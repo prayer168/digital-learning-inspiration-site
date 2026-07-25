@@ -5,7 +5,7 @@
 "use strict";
 
 var CACHE_PREFIX = "digital-learning-inspiration-";
-var CACHE_VERSION = "v1";
+var CACHE_VERSION = "v2";
 var APP_CACHE = CACHE_PREFIX + CACHE_VERSION;
 
 var APP_SHELL = [

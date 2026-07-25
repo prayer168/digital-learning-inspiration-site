@@ -17,7 +17,7 @@
 
   var GUIDE_ITEMS = [
     ["搜尋案例", "在資料庫的搜尋列輸入關鍵字，支援案例名稱、技術、科目與標籤，中英文皆可、忽略大小寫。"],
-    ["分類與篩選", "使用左側（手機為抽屜）篩選面板，可同時套用資源類型、教學領域、技術、難度等多個條件。"],
+    ["分類與篩選", "使用搜尋列下方的篩選選單，可同時套用資源類型、教學領域、技術、難度等多個條件。"],
     ["收藏案例", "點選卡片右上角星號即可收藏，收藏會保存在瀏覽器 localStorage，重新整理後仍在。"],
     ["複製程式碼", "在案例詳情的程式碼分頁點「複製」，即可貼到您的教材檔案中；亦可複製完整單檔版本。"],
     ["即時預覽", "在詳情視窗點「執行」，程式碼會在安全的 iframe 沙箱中執行，可切換桌面／平板／手機寬度。"],
@@ -669,6 +669,7 @@
       (ex.subjects || []).forEach(function (s) { subjSet[s] = 1; });
     });
     return {
+      total: EXAMPLES.length,
       js: byType["JavaScript 特效"] || 0,
       css: byType["CSS 動畫"] || 0,
       science: byType["自然科互動網站"] || 0,
@@ -680,7 +681,7 @@
   function animateStats() {
     var stats = computeStats();
     var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    $all(".stat__num").forEach(function (el) {
+    $all("[data-stat]").forEach(function (el) {
       var key = el.dataset.stat;
       var target = stats[key] || 0;
       if (reduce) { el.textContent = target; return; }
