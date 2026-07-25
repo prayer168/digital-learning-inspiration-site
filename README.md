@@ -22,6 +22,7 @@
 - 💻 **程式碼展示**：HTML / CSS / JavaScript / 完整版 / 使用說明分頁，語法醒目顯示（Prism.js）、一鍵複製、全螢幕檢視
 - ⬇️ **下載完整單檔 HTML**
 - ▶️ **即時預覽**：在 `iframe sandbox="allow-scripts"` 沙箱中執行，可切換桌面／平板／手機寬度、重新整理、全螢幕、錯誤提示
+- 📴 **離線快取**：從 GitHub Pages 或本機 HTTP Server 首次完整載入後，可離線重新開啟網站、搜尋全部案例並查看精選縮圖
 - 📊 **統計數字動畫**、首頁快捷入口、分類 chips、使用指南
 - ⌨️ **全域鍵盤快捷鍵**：`/` 聚焦搜尋、`t` 主題、`f` 篩選、`g/l` 檢視、`m` 載入更多、`?` 說明、`Esc` 關閉
 - 📤 **匯出整個資料集**：一鍵下載完整案例（JSON）或摘要（CSV，含 UTF-8 BOM）
@@ -59,14 +60,18 @@ digital-learning-inspiration/
 │   ├── filters.js        # 篩選器邏輯與面板
 │   ├── favorites.js      # 收藏（localStorage）
 │   ├── code-runner.js    # 複製、下載、iframe 即時預覽
-│   └── theme.js          # 深色／淺色模式
+│   ├── theme.js          # 深色／淺色模式
+│   └── offline.js        # Service Worker 註冊與更新提示
 ├── data/
 │   └── examples.json     # 案例資料備份（未來擴充格式，非執行必需）
 ├── assets/
 │   ├── icons/            # 圖示
 │   ├── images/           # 圖片
 │   └── thumbnails/       # 縮圖（缺圖時卡片自動以 emoji 備援）
+├── docs/
+│   └── test-report.md    # 功能、資料、離線與手機版品質檢核
 ├── README.md
+├── service-worker.js     # 網站殼層、案例資料與精選縮圖離線快取
 └── LICENSE
 ```
 
@@ -183,6 +188,7 @@ require('fs').writeFileSync('data/examples.json',JSON.stringify(window.DATA,null
 - Three.js / GSAP 案例需透過 CDN 載入，離線或無網路時無法執行（已提供載入失敗提示）；其餘案例皆可離線使用。
 - 即時預覽使用 `sandbox="allow-scripts"`，僅執行本站已知的示範程式碼；不允許存取父頁面 DOM、不開啟彈出視窗。
 - 收藏與偏好設定儲存於瀏覽器 `localStorage`，無痕模式或停用儲存時無法保存（已提供友善提示）。
+- Service Worker 只會在 GitHub Pages、`localhost` 等 HTTP(S) 環境啟用；用 `file://` 直接開啟時仍可使用網站核心功能，但不會建立離線快取。外部 CDN 程式庫不納入本站離線快取，因此相關案例離線時仍無法執行。
 - 縮圖策略：**每張卡片皆有依資源類型上色的漸層縮圖**（含類型 emoji 圖示）；其中約 26 個可離線執行的精選案例另附**由範例實際渲染截圖產生的真實縮圖**（`assets/thumbnails/<id>.png`，清單見 `js/thumbnails.js`）。需要 CDN 的案例（Three.js／GSAP／p5.js／Matter.js／Chart.js）因離線無法擷取實際畫面，維持漸層＋emoji 呈現。要批次產生真實縮圖，可使用內附的開發工具 `scripts/generate-thumbnails.js`（需 `npm install --save-dev playwright`）：
 
 ```bash
@@ -200,7 +206,7 @@ node scripts/generate-thumbnails.js js-001 sci-001   # 只產生指定 id
 - 逐步擴充至 300～500 個案例（架構已支援）：新案例可先以精簡資料建立，再補上完整程式碼與教學分析。
 - 加入更多外部自然科網站研究案例（互動物理模擬、虛擬實驗室、公民科學等）。
 - 增加案例縮圖與動態預覽、標籤雲、關鍵字醒目標示強化。
-- 匯入／匯出整體資料集、離線快取（Service Worker）。
+- 匯入／匯出整體資料集。
 
 ---
 
