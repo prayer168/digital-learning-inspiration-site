@@ -58,6 +58,7 @@ digital-learning-inspiration/
 │   ├── data-phase4c.js   # 第四階段擴充：互動元件與程式效果（多附完整程式碼）
 │   ├── data-phase4d.js   # 第四階段擴充：語文/社會/藝術/健康/科展 + AI/CS + 外部站
 │   ├── data-phase4e.js   # 第四階段擴充：收尾補充（突破 500 案例）
+│   ├── data-phase5a.js   # GuardAI 防詐查證教育科技教學應用案例
 │   ├── thumbnails.js     # 具真實截圖縮圖的案例 id 清單（window.THUMBS）
 │   ├── filters.js        # 篩選器邏輯與面板
 │   ├── favorites.js      # 收藏（localStorage）
@@ -145,6 +146,7 @@ git push origin main
 ```bash
 node -e "global.window={};global.matchMedia=function(){return{matches:false}};\
 require('./js/data-phase2.js');require('./js/data-phase2b.js');require('./js/data-phase2c.js');\
+require('./js/data-phase5a.js');\
 require('./js/data.js');\
 require('fs').writeFileSync('data/examples.json',JSON.stringify(window.DATA,null,2))"
 ```
@@ -221,8 +223,9 @@ node scripts/generate-thumbnails.js js-001 sci-001   # 只產生指定 id
 
 ## 十、測試結果摘要
 
-- ✅ **509 個案例**（第一階段 60 ＋ 第二階段 81 ＋ 第三、四階段 368）、**227 個具完整可執行程式碼**
-- ✅ 已涵蓋全部 18 種資源類型：JavaScript 特效、CSS 動畫、自然科互動網站、Three.js、GSAP、SVG、Canvas、p5.js、Matter.js、Chart.js、UI 互動元件、捲動敘事、遊戲化學習、測驗與評量、虛擬實驗、教材版面與導覽、無障礙互動、行動載具互動
+- ✅ **510 個案例**（原有 509 個案例加上 GuardAI 教學應用）、**227 個具完整可執行程式碼**
+- ✅ 收錄 GuardAI 反詐守門員案例，提供正式網站與競賽展示模式連結；保留原網站為獨立服務，不複製其程式碼
+- ✅ 已涵蓋全部 19 種資源類型，包括新增的互動學習平台
 - ✅ 教學領域涵蓋自然科學（物理／化學／生物／地球太空）、數學、人工智慧、資訊教育、科展探究、語文、社會、藝術、健康、環境教育
 - ✅ 已達成並超越規格中「架構支援 300～500 個案例」的目標，並可比照 `data-phase4*.js` 模式持續擴充
 - ✅ 進階功能：全域鍵盤快捷鍵（按 <kbd>?</kbd> 查看）、匯出整個資料集（JSON／CSV）、首頁極光背景與漂浮學科圖示

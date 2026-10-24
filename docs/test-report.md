@@ -45,3 +45,16 @@ CDN 煙霧測試已從正式 GitHub Pages 讀取目前發布的案例程式碼�
 - 案例詳情：✅ Modal 可開啟、標題正確、內容可捲動並可關閉。
 - 動態偏好：✅ 新增圓環與捲動提示動畫受 `prefers-reduced-motion` 停用。
 - 版權界線：✅ 未使用參考站素材、品牌、文案或程式碼；原則記錄於 `docs/visual-design-notes.md`。
+
+## 2026-10-07 GuardAI 教學應用案例整合
+
+- 新增案例 `edu-001`，包含教學應用、學習目標、教師引導、學生任務與安全提醒。
+- 同步更新 `data/examples.json` 至 510 筆；案例工廠現在尊重明確提供的授權欄位，避免把外部網站誤標成本站示範程式碼。
+- 正式網站與競賽展示模式以新分頁連結開啟；未複製 GuardAI 原站程式碼，也未將網站嵌入 iframe。
+- 新增「互動學習平台」資源類型、Shield 圖示與深海藍／金色縮圖樣式。
+- 新增案例載入與 Service Worker 快取項目，快取版本提升至 v4。
+- 驗證：全部 JS 語法檢查及 `git diff --check` 通過；案例 510 筆、ID 唯一，GuardAI 僅一筆。
+- 瀏覽器操作：搜尋 GuardAI 顯示單筆案例；詳情含教學應用、正確授權說明、正式網站及競賽展示連結，外連含 `rel="noopener"`；按 Escape 可關閉。
+- 響應式：1440 × 1000、768 × 1024、390 × 844 均無整頁水平溢出。
+- 離線：Service Worker v4 成功啟用並快取 `data-phase5a.js`；切換離線後重新載入，仍可搜尋到 GuardAI 案例。
+- 執行期：本機 Chromium 無未捕捉頁面錯誤。截圖保存在 `docs/screenshots/guardai-case-2026-10-07/`。

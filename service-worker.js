@@ -5,7 +5,7 @@
 "use strict";
 
 var CACHE_PREFIX = "digital-learning-inspiration-";
-var CACHE_VERSION = "v3";
+var CACHE_VERSION = "v4";
 var APP_CACHE = CACHE_PREFIX + CACHE_VERSION;
 
 var APP_SHELL = [
@@ -28,6 +28,7 @@ var APP_SHELL = [
   "./js/data-phase4c.js",
   "./js/data-phase4d.js",
   "./js/data-phase4e.js",
+  "./js/data-phase5a.js",
   "./js/data.js",
   "./js/thumbnails.js",
   "./js/theme.js",

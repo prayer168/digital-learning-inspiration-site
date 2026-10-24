@@ -68,7 +68,7 @@
       accessibilityNotes: o.accessibilityNotes || "提供鍵盤操作與文字說明，狀態變化以 aria 屬性或文字回饋；動畫尊重 prefers-reduced-motion。",
       modifyTips: o.modifyTips || ["修改文字與顏色以符合主題", "調整參數（數量、速度、範圍）", "替換資料來源"],
       thumbnail: "", referenceUrl: o.referenceUrl || "",
-      license: usesLib ? ("本站示範程式碼；" + o.libraries.join("、") + " 各適用其原授權") : "本站示範程式碼",
+      license: o.license || (usesLib ? ("本站示範程式碼；" + o.libraries.join("、") + " 各適用其原授權") : "本站示範程式碼"),
       tags: o.tags || [],
       createdAt: TODAY, updatedAt: TODAY,
       htmlCode: o.htmlCode || "", cssCode: o.cssCode || "", jsCode: o.jsCode || "", fullCode: o.fullCode || "",
