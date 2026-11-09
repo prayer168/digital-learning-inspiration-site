@@ -39,6 +39,7 @@ const DATA_FILES = [
   "data-phase2", "data-phase2b", "data-phase2c",
   "data-phase3a", "data-phase3b", "data-phase3c", "data-phase3d",
   "data-phase4a", "data-phase4b", "data-phase4c", "data-phase4d", "data-phase4e",
+  "data-phase5a",
   "data"
 ];
 
